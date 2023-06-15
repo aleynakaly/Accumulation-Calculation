@@ -1,0 +1,29 @@
+def calculate_accumulation(initial_amount, monthly_interest_rate, num_of_months, multiples):
+    amount = initial_amount
+    for month in range(1, num_of_months + 1):
+        amount *= (1 + monthly_interest_rate)
+        if month % multiples == 0:
+            print("Accumulated amount in month", month, ":", round(amount, 2), "")
+    return amount
+
+def main():
+    print("Accumulation Calculation Program")
+    print("Hello World! This program is there to calculate the cumulative accumulation of your amount based on the monthly interest rate.")
+    print("Let's enter an initial amount!")
+    print("")
+    
+    # Get input from the user.
+    initial_amount = float(input("Enter the initial amount: "))
+    monthly_interest_rate = float(input("Enter the monthly interest rate (%): ")) / 100
+    num_of_months = int(input("Enter the number of months for accumulation: "))
+    multiples = int(input("Enter the interval between multiples: "))
+    print("")
+    print("Calculating Accumulation...")
+
+    # Perform accumulation calculation and print the results.
+    total_accumulation = calculate_accumulation(initial_amount, monthly_interest_rate, num_of_months, multiples)
+    print("")
+    print("Total Accumulation:", round(total_accumulation, 2))
+
+if __name__ == "__main__":
+    main()
